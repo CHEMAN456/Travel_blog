@@ -1,0 +1,30 @@
+{% extends 'blog_app/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    
+    {% if blog.image %}
+      <img src="{{ blog.image.url }}" class="card-img-top img-fluid rounded" alt="Image of {{ blog.destination }}">
+    {% endif %}
+
+    <div class="card-body">
+      <h2 class="card-title">{{ blog.title }}</h2>
+      
+      <p class="text-muted">
+        <strong>Destination:</strong> {{ blog.destination }}<br>
+        <strong>Author:</strong> {{ blog.author.username }}<br>
+        <strong>Posted on:</strong> {{ blog.posted_at|date:"F j, Y - g:i a" }}
+      </p>
+
+      <hr>
+
+      <div class="card-text" style="white-space: pre-line;">
+        {{ blog.content }}
+      </div>
+
+      <a href="{% url 'blog_app:home' %}" class="btn btn-outline-primary mt-4">← Back to Home</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
