@@ -29,7 +29,8 @@ SECRET_KEY = 'django-insecure-nktrqcj_t%z-n%%)^s1&2e5du%awv6o2h%%%c&j$nnrq(0c$l_
 DEBUG = os.environ.get('DEBUG','False') == 'True'
 
 
-ALLOWED_HOSTS = ['https://travel-blog-bf0d.onrender.com']
+ALLOWED_HOSTS = ['travel-blog-bf0d.onrender.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
